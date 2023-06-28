@@ -16,7 +16,7 @@ def Append(arr,val):
 
 #Insert
 
-def insert(arr,pos,ele):
+def Insert(arr,pos,ele):
     b=['']
     d=a+b
 
@@ -31,11 +31,11 @@ def insert(arr,pos,ele):
             print(d[s])
             s-=1
         d[n]=e
-        print(d)
+        return d
 
 #delete
 
-def delete(arr,n):
+def Delete(arr,n):
     s=len(arr)
     if s==0:
         print("List Empty")
@@ -50,19 +50,16 @@ def delete(arr,n):
                         
                       
                     else:
-                        a=[]
-                        i=0
-                        while i!=s-1:
-                            Append(a,arr[i])
-                            i+=1
-                        print(a)
+                        f=arr[0:s-1]
+                        return f
                         
 #remove
-#should work on it
+
 def remove(arr,val):
     for i in range(len(arr)):
         if arr[i]==val:
-            delete(arr,i)
+            t=Delete(arr,i)
+            return t
             break
     else:
         print("No element in the list")
@@ -75,15 +72,9 @@ def pop(arr):
         print("List Empty")
    
     else:    
-        r=arr[0:s-2]
-        print(r)
-                        
+        r=arr[0:s-1]
+        return r                        
                            
-        
-
-
-
-
 a=[]
 Append(a,10)
 Append(a,20)
@@ -92,12 +83,16 @@ Append(a,40)
 print(a)
 n=int(input("Pos:"))
 e=int(input("ele:"))
-a.insert(n,e)
+a=Insert(a,n,e)
 print(a)
+
 pos=int(input("pos:"))
-delete(a,pos)
+a=Delete(a,pos)
+
 print("pop:")
-pop(a)
+a=pop(a)
+print(a)
 print("remove:")
 val=int(input("val"))
-remove(a,val)
+a=remove(a,val)
+print(a)
