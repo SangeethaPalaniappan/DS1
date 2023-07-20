@@ -72,7 +72,7 @@ def pop(arr):
         print("List Empty")
    
     else:    
-        r=Delete(arr,s-1) #this is not efficient way
+        r=Delete(arr,s-1) 
         return r                        
                            
 a=[]
