@@ -39,6 +39,15 @@ def stack_append(n,b):
 def stack_pop(b):    
     for i in range(1):
         print(pop(b))
+
+def search(n,val):
+   for x in range(n):
+      if arr[x]==val:
+         print("Element Found")
+         break
+      else:
+         print("No element found")
+         break        
      
 n=int(input("n:"))
 arr=[]
