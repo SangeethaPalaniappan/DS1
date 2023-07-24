@@ -1,4 +1,3 @@
-#should work on it
 #stack_using_linked_list
 class Node:
     def __init__(self,val):
@@ -42,6 +41,6 @@ obj.push(30)
 obj.display()
 obj.pop()
 obj.pop()
-print("\n","After popping:")
+print("After popping:")
 obj.display()
 print("sangeetha")
