@@ -29,12 +29,11 @@ class dlinked_list:
     def atposition(self,val,pos):
         newnode=Node(val)
         temp=self.head
-        for i in range(pos):
+        for i in range(pos-1):
             temp=temp.next
         temp.next.prev=newnode
         newnode.next=temp.next
-        newnode.prev=temp   
-        
+        newnode.prev=temp    
         temp.next=newnode
     def delete(self,key):
         temp=self.head
@@ -79,6 +78,7 @@ obj.addfirst(10)
 obj.addlast(30)
 obj.addlast(50)
 obj.atposition(40,2)
+obj.atposition(70,4)
 obj.search(500)
 obj.delete(400)
 obj.display()

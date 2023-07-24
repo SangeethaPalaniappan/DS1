@@ -18,12 +18,14 @@ def Append(arr,val):
  
 #delete
 
-def delete(arr,n):
+def delete(arr,n):#here used delete because the position of each element changes
     s=len(arr)
     if s==0:
         print("List Empty")
+        
     elif n>=s:
         print("index out of range")
+        return a
     else:    
         for i in range(s):
             if n==i:                
@@ -38,21 +40,24 @@ def delete(arr,n):
                         Append(a,arr[i])
                         i+=1
                     print(a)
+                    return a
                     break
                         
                      
 
-def Queue_enqueue(n,b):
+def Queue_enqueue(n,b):#n is the size of the Queue
       for i in range(n):
-       s=3
-       Append(b,s)
+        s=int(input("s:"))#the elements to be added
+        Append(b,s)
       print(b)
+      return b
 
 def Queue_dequeue(b):
-    
-    print(delete(b,0))
+    s=delete(b,0)
+    return s
      
-n=1
-arr=[10,20,30,40]
-
-Queue_dequeue(arr)
+n=5
+arr=[]
+arr=Queue_enqueue(n,arr)
+arr=Queue_dequeue(arr)
+arr=Queue_dequeue(arr)

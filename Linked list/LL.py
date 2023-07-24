@@ -8,7 +8,7 @@ class linked_list:
         self.head=None
     def addfirst(self,val):
         newnode=Node(val)
-        if self.head==None:
+        if self.head==None:#if the list is empty
             self.head=newnode
         else:
             temp=self.head
@@ -17,7 +17,7 @@ class linked_list:
     def addlast(self,val):
         newnode=Node(val)
         temp=self.head
-        if self.head==None:
+        if self.head==None:#if the list is empty
             self.head=newnode
         else:
             while temp.next!=None:
@@ -26,19 +26,22 @@ class linked_list:
     def atposition(self,val,pos):
         newnode=Node(val)
         temp=self.head
-        for i in range(pos):
-            temp=temp.next
+        for i in range(pos-1):#even if the iterations are lesser than the position,
+                              #temp will be assigned to next
+            
             if temp==None:
-               print("Cannot add, out of size")
+               print("Index out of range")
                break
+            
+            temp=temp.next
         if temp!=None:       
            newnode.next=temp.next
            temp.next=newnode
     def delete(self,key):
         temp=self.head
-        if self.head==None:
+        if self.head==None:#if the list is empty
             print("List is Empty")
-        elif temp.data==key:
+        elif temp.data==key:#The key in the head
             self.head=temp.next
             temp.next=None
         else:
@@ -51,13 +54,13 @@ class linked_list:
     def search(self,key):
         temp=self.head
         if temp==None:
-            print("No element exist")
+            print("No list exist")
         else:
             while temp!=None:
-               if temp.data==key:
+                if temp.data==key:
                    print("Key Found")
                    break
-               temp=temp.next
+                temp=temp.next
             else:
                 print("Key Not Found")
     def display(self):
@@ -72,6 +75,8 @@ obj.addfirst(20)
 obj.addfirst(10)
 obj.addlast(30)
 obj.atposition(40,5)
+obj.atposition(40,2)
+obj.atposition(70,3)
 obj.addlast(50)
 obj.delete(10)
 obj.delete(100)
