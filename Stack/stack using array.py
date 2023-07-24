@@ -35,10 +35,9 @@ def search(n,val):
       if arr[x]==val:
          print("Element Found")
          break
-      else:
-         print("No element found")
-         break
-                     
+   else:
+     print("No element found")
+                    
 def stack_append(n,b):
     for i in range(n):
         s=int(input("s:"))
@@ -54,6 +53,7 @@ n=int(input("n:"))
 arr=[]
 arr=stack_append(n,arr)
 search(n,50)
+search(n,40)
 arr=stack_pop(arr)
 if len(arr)==0:
    print("List becomes empty")
