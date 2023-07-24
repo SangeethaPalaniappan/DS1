@@ -1,4 +1,3 @@
-#Should work on it
 #stack_using_array
 
 #Append
@@ -21,6 +20,7 @@ def pop(arr):
     s=len(arr)
     if s==0:
         print("List Empty")
+        return arr
    
     else:    
         i=0
@@ -28,19 +28,24 @@ def pop(arr):
         while i!=s-1:
             Append(a,arr[i])
             i+=1
-        print(a)
+        return a
                      
 def stack_append(n,b):
     for i in range(n):
         s=int(input("s:"))
         Append(b,s)
-    print(b)
+    return b
     
-def stack_pop(b):    
-    for i in range(1):
-        print(pop(b))
+def stack_pop(b):  
+   for x in range(n):
+      b=pop(b)
+   return b
      
 n=int(input("n:"))
 arr=[]
-stack_append(n,arr)
-stack_pop(arr)
+arr=stack_append(n,arr)
+arr=stack_pop(arr)
+if len(arr)==0:
+   print("List becomes empty")
+else:
+   print(arr)
