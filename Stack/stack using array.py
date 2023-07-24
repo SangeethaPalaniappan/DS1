@@ -29,6 +29,15 @@ def pop(arr):
             Append(a,arr[i])
             i+=1
         return a
+
+def search(n,val):
+   for x in range(n):
+      if arr[x]==val:
+         print("Element Found")
+         break
+      else:
+         print("No element found")
+         break
                      
 def stack_append(n,b):
     for i in range(n):
@@ -44,6 +53,7 @@ def stack_pop(b):
 n=int(input("n:"))
 arr=[]
 arr=stack_append(n,arr)
+search(n,50)
 arr=stack_pop(arr)
 if len(arr)==0:
    print("List becomes empty")
