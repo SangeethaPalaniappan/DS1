@@ -37,11 +37,24 @@ class queue:
                 temp=temp.next
         else:
             print("Queue Empty")
-        
+            
+    def search(self,val):
+       temp=self.head
+       while temp!=None:
+          if temp.data==val:
+             print("Element found")
+             break        
+                 
+          temp=temp.next   
+       else:
+             print("No element found")
+                          
 obj=queue()
 obj.enqueue(10)
 obj.enqueue(20)
 obj.enqueue(30)
+obj.search(20)
+obj.search(100)
 obj.display()
 obj.dequeue()
 obj.dequeue()

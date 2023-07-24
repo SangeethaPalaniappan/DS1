@@ -43,7 +43,13 @@ def delete(arr,n):#here used delete because the position of each element changes
                     return a
                     break
                         
-                     
+def search(n,val):
+   for x in range(n):
+      if arr[x]==val:
+         print("Element Found")
+         break
+   else:
+     print("No element found")                     
 
 def Queue_enqueue(n,b):#n is the size of the Queue
       for i in range(n):
@@ -59,5 +65,7 @@ def Queue_dequeue(b):
 n=5
 arr=[]
 arr=Queue_enqueue(n,arr)
+val=int(input())
+search(n,val)
 arr=Queue_dequeue(arr)
 arr=Queue_dequeue(arr)
