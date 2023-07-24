@@ -23,6 +23,7 @@ class queue:
             
             self.head=temp.next
             temp.next=None
+            
         else:
             print("No Element exist")
                     
@@ -35,7 +36,7 @@ class queue:
                     print("-->",end="")
                 temp=temp.next
         else:
-            print("\n","Queue Empty")
+            print("Queue Empty")
         
 obj=queue()
 obj.enqueue(10)
@@ -44,6 +45,8 @@ obj.enqueue(30)
 obj.display()
 obj.dequeue()
 obj.dequeue()
-obj.dequeue()
-print("\n","After dequeuing all the elements")
+if obj.dequeue()==None:
+    print("Queue becomes empty")
+
+print("After dequeuing all the elements")
 obj.display()
