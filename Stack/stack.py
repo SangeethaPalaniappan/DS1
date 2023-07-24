@@ -33,12 +33,24 @@ class stack:
             
         else:
             print("Stack Empty")
-        
+    
+    def search(self,val):
+       temp=self.head
+       while temp!=None:
+          if temp.data==val:
+             print("Element found")
+             break        
+          else:
+             print("No element found")
+             break           
+               
 obj=stack()
 obj.push(10)
 obj.push(20)
 obj.push(30)
 obj.display()
+obj.search(30)
+obj.search(50)
 obj.pop()
 obj.pop()
 print("After popping:")
