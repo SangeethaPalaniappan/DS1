@@ -8,6 +8,7 @@ def Append(arr,val):
         for i in range(1):
             #s=int(input("s:"))
             arr+=[val] 
+            
         
         
     else:
@@ -51,21 +52,42 @@ def search(n,val):
    else:
      print("No element found")                     
 
-def Queue_enqueue(n,b):#n is the size of the Queue
-      for i in range(n):
-        s=int(input("s:"))#the elements to be added
-        Append(b,s)
-      print(b)
-      return b
+class Enqueue:
+    def __init__(self):
+        self.front=-1
+        self.rear=-1
+    def Queue_enqueue(self,n,b):#n is the size of the Queue
+        b=n*[-1]
+        while n-1!=-1:
+            s=int(input("s:"))#the elements to be added
+            if self.front==-1:
+                self.front=0
+                b[self.front]=s
+            self.rear+=1
+            b[self.rear]=s  #changing the position 
+            n-=1
+            print(b)
+        return b
 
-def Queue_dequeue(b):
-    s=delete(b,0)
-    return s
+    def Queue_dequeue(self,b):
+        s=delete(b,0)
+        r=self.rear
+        self.rear=r-1
+        
+            
+        if self.rear==-1:#if therer is no element
+            self.front=-1
+            print("Empty Queue")
+        return s
      
 n=5
 arr=[]
-arr=Queue_enqueue(n,arr)
+a=Enqueue()
+arr=a.Queue_enqueue(n,arr)
 val=int(input())
 search(n,val)
-arr=Queue_dequeue(arr)
-arr=Queue_dequeue(arr)
+arr=a.Queue_dequeue(arr)
+arr=a.Queue_dequeue(arr)
+arr=a.Queue_dequeue(arr)
+arr=a.Queue_dequeue(arr)
+arr=a.Queue_dequeue(arr)
