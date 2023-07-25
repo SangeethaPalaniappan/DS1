@@ -5,26 +5,26 @@ class Node:
         self.next=None
 class stack:
     def __init__(self):
-        self.head=None
+        self.top=None
     def push(self,val):
         newnode=Node(val)
-        if self.head==None:
-            self.head=newnode
+        if self.top==None:
+            self.top=newnode
         else:
-            temp=self.head
+            temp=self.top
             newnode.next=temp
-            self.head=newnode
+            self.top=newnode
     def pop(self):
-        temp=self.head
+        temp=self.top
         if temp!=None:
             
-            self.head=temp.next
+            self.top=temp.next
             temp.next=None
         else:
             print("No Element exist")
         
     def display(self):
-        temp=self.head
+        temp=self.top
         if temp!=None:  
             while temp!=None:
                 print(temp.data)
