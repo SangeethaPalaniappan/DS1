@@ -6,29 +6,38 @@ class Node:
         self.next=None
 class queue:
     def __init__(self):
-        self.head=None
+        
+        self.rear=None
+        self.front=None
     def enqueue(self,val):
         newnode=Node(val)
-        if self.head==None:
-            self.head=newnode
+        if self.front==None:
+            self.front=newnode
+            self.rear=newnode
         else:
-            temp=self.head
+            temp=self.front
             while temp.next!=None:
                 temp=temp.next
             temp.next=newnode
+            self.rear=newnode
     def dequeue(self):
         
-        temp=self.head
-        if temp!=None:
-            
-            self.head=temp.next
+        temp=self.front
+        
+        #for i in range(n) - if all elements dequeue once
+        if self.front==self.rear:
+                self.rear=None
+                self.front=None   
+                temp=None
+        elif temp!=None:
+            self.front=temp.next
             temp.next=None
             
         else:
             print("No Element exist")
                     
     def display(self):
-        temp=self.head
+        temp=self.front
         if temp!=None:  
             while temp!=None:
                 print(temp.data,end="")
@@ -39,7 +48,7 @@ class queue:
             print("Queue Empty")
             
     def search(self,val):
-       temp=self.head
+       temp=self.front
        while temp!=None:
           if temp.data==val:
              print("Element found")
