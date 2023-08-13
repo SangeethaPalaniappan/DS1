@@ -26,14 +26,16 @@ class linked_list:
     def atposition(self,val,pos):
         newnode=Node(val)
         temp=self.head
-        for i in range(pos-1):#even if the iterations are lesser than the position,
+        for i in range(pos-1): # even if the iterations are lesser than the position,
                               #temp will be assigned to next
             
             if temp==None:
                print("Index out of range")
                break
             
-            temp=temp.next
+            temp=temp.next 
+            # For each iterations temp will be assigned to next node, 
+            # When the loop failed before the actual position given temp will point the actual positions previous node 
         if temp!=None:       
            newnode.next=temp.next
            temp.next=newnode

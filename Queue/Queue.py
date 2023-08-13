@@ -48,23 +48,7 @@ class queue:
             self.front=temp.next
             temp.next=None
 
-        '''
-    #This coding is to add the element in front
-    def __init__(self):
         
-        self.rear=None
-        self.front=None
-    def enqueue(self,val):
-        newnode=Node(val)
-        if self.front==None:
-            self.front=newnode
-            self.rear=newnode
-        else:
-            temp=self.rear
-            newnode.next=temp
-            
-            self.rear=newnode'''
-            
         else:
             print("No Element exist")
                     
